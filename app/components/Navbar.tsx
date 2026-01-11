@@ -41,9 +41,9 @@ export function Navbar() {
           {/* Logo */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="text-2xl font-bold text-neutral-900 dark:text-neutral-100 hover:opacity-80 transition-opacity"
+            className="text-2xl font-bold  dark:text-neutral-100 hover:opacity-80 transition-opacity"
           >
-            SM<span className="text-neutral-500">.</span>
+            SM<span className="opacity-70">.</span>
           </button>
 
           {/* Desktop Navigation */}
@@ -52,7 +52,7 @@ export function Navbar() {
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors font-medium"
+                className="opacity-70 dark:text-neutral-400 hover:opacity-100 dark:hover:text-neutral-100 transition-opacity font-medium hover:cursor-pointer"
               >
                 {link.name}
               </button>
