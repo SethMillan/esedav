@@ -1,10 +1,16 @@
+"use client";
 import Image from "next/image";
+import { Navbar } from "./components/Navbar";
+import NavSocial from './components/NavSocial';
 
 export default function Home() {
   return (
     <>
-      <div>
+      <div className="w-full">
+        <Navbar/>
         <main className="flex h-screen items-center justify-center">
+          <div className="fixed left-12"><NavSocial/></div>
+          
           <div className="flex flex-col items-center justify-center w-4xl h-full -mt-15">
             <p className="font-extralight text-2xl -mb-6">Hola, soy</p>
             <h1 className="text-[130px] font-extrabold ">SETH MILLAN</h1>
