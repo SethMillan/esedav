@@ -8,7 +8,7 @@ function Hero() {
   return (
     <>
       <main className="flex h-full items-center flex-col justify-center   ">
-        <div className="fixed left-12">
+        <div className="absolute left-12 top-1/2 -translate-y-1/2">
           <NavSocial />
         </div>
 
@@ -32,9 +32,8 @@ function Hero() {
             </Button>
           </div>
           <div className="animate-bounce mt-12">
-            <Mouse/>
+            <Mouse />
           </div>
-          
         </div>
       </main>
     </>
