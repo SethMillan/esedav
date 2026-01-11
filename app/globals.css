@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import "tw-animate-css";
+/*@import "tw-animate-css";*/
 
 @custom-variant dark (&:is(.dark *));
 
@@ -59,7 +59,7 @@ body {
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  --primary: #2e3a59;
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
@@ -121,6 +121,10 @@ body {
 }
 
 @layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
   * {
     @apply border-border outline-ring/50;
   }
