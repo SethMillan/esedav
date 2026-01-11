@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Roboto_Condensed } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -12,9 +12,16 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const robotoCondensed = Roboto_Condensed({
+  variable: "--font-roboto-condensed",
+  subsets: ["latin"],
+  weight: ["200","300", "400", "700", "800"],
+});
+
 export const metadata: Metadata = {
   title: "Seth Millan - Portfolio",
-  description: "Portfolio website of Seth Millan, software developer and designer.",
+  description:
+    "Portfolio website of Seth Millan, software developer and designer.",
 };
 
 export default function RootLayout({
@@ -25,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${robotoCondensed.variable} antialiased` }
       >
         {children}
       </body>
