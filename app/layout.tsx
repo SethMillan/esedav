@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 const robotoCondensed = Roboto_Condensed({
   variable: "--font-roboto-condensed",
   subsets: ["latin"],
-  weight: ["200","300", "400", "600", "700", "800"],
+  weight: ["200", "300", "400", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -31,8 +31,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+        />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${robotoCondensed.variable} antialiased` }
+        className={`${geistSans.variable} ${geistMono.variable} ${robotoCondensed.variable} ${robotoCondensed.className} antialiased`}
       >
         {children}
       </body>
