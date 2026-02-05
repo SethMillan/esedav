@@ -14,7 +14,7 @@ function NavSocial() {
       <nav className="flex flex-col gap-4">
         <Tooltip>
           <TooltipTrigger asChild>
-            <a href="https://www.facebook.com/" target="_blank">
+            <a href="https://www.facebook.com/sutekh.millan/" target="_blank">
               <img src="/facebook.svg" alt="Facebook" className="w-6 h-6" />
             </a>
           </TooltipTrigger>
@@ -23,7 +23,7 @@ function NavSocial() {
 
         <Tooltip>
           <TooltipTrigger asChild>
-            <a href="https://www.github.com/" target="_blank">
+            <a href="https://github.com/SethMillan" target="_blank">
               <img src="/github.svg" alt="GitHub" className="w-6 h-6" />
             </a>
           </TooltipTrigger>
@@ -32,7 +32,7 @@ function NavSocial() {
 
         <Tooltip>
           <TooltipTrigger asChild>
-            <a href="https://www.instagram.com/" target="_blank">
+            <a href="https://www.instagram.com/millan_d_seth/" target="_blank">
               <img src="/instagram.svg" alt="Instagram" className="w-6 h-6" />
             </a>
           </TooltipTrigger>
@@ -41,7 +41,7 @@ function NavSocial() {
 
         <Tooltip>
           <TooltipTrigger asChild>
-            <a href="https://www.linkedin.com/" target="_blank">
+            <a href="https://www.linkedin.com/in/mill%C3%A1n-d-sutekh17/" target="_blank">
               <img src="/linkedin.svg" alt="LinkedIn" className="w-6 h-6" />
             </a>
           </TooltipTrigger>
