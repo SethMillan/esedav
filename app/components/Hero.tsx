@@ -12,7 +12,7 @@ function Hero() {
           <NavSocial />
         </div>
 
-        <div className="flex flex-col items-center justify-center w-4xl h-full ">
+        <div className="flex flex-col items-center justify-center  h-full ">
           <p className="font-extralight text-2xl md:mb-6 mb-4">Hola, soy</p>
           <h1 className="text-6xl sm:text-7xl lg:text-9xl md:text-8xl font-extrabold max-w-2xs text-center md:max-w-full">SETH MILLAN</h1>
           <h2 className="lg:text-5xl font-extrabold opacity-85 text-4xl pt-4 lg:pt-0 text-center">

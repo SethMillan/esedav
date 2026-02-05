@@ -39,16 +39,16 @@ function Services() {
   ];
 
   return (
-    <section className="h-screen">
+    <section className="pb-8">
       <h1 className="text-4xl font-bold text-center mb-8">Servicios</h1>
-      <div className="flex justify-evenly w-full">
+      <div className="flex justify-evenly w-full flex-col md:flex-row items-center flex-wrap gap-8">
         {services.map((service, index) => (
           <div
             key={index}
             className=" relative w-95 bg-[#ffffff] dark:bg-gray-800 p-8 rounded-2xl hover:shadow-xl  transition-shadow duration-300 shadow-lg flex flex-col gap-4 "
           >
             <div
-              className="w-full h-4 absolute top-0 left-0 rounded-t-2xl"
+              className="w-full h-4 absolute top-0 left-0 rounded-t-2xl "
               style={{ backgroundColor: `#${service.color}` }}
             ></div>
             <h2 className="text-4xl font-extrabold flex items-center gap-2 pt-4 justify-evenly">
