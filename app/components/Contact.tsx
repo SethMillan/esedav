@@ -2,7 +2,16 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, MapPin, Phone } from "lucide-react";
+import {
+  Mail,
+  MapPin,
+  Phone,
+  Github,
+  Linkedin,
+  Twitter,
+  Instagram,
+  Facebook,
+} from "lucide-react";
 import React from "react";
 import emailjs from "@emailjs/browser";
 import { toast } from "sonner";
@@ -67,13 +76,22 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="bg-gray-200 flex items-center justify-center flex-col py-10 gap-4">
+    <section
+      id="contact"
+      className="bg-gray-200/50 flex items-center justify-center flex-col py-10 gap-4"
+    >
       <h1 className="font-bold text-4xl">Contacto</h1>
-      <p className="font-normal text-lg">
-        ¿Tienes un proyecto en mente? Hablemos sobre como podemos ayudarte.
+      <p className="font-normal text-lg w-[85%] text-center">
+        ¿Tienes un proyecto en mente? <br className="block md:hidden" />
+        Hablemos sobre como podemos ayudarte.
       </p>
-      <div className="flex justify-between w-[80%]">
-        <div id="informacion-contacto" className="flex gap-4 flex-col">
+      <div className="flex md:flex-row flex-col justify-between w-[80%] items-center pt-4">
+        <div className="flex flex-col">
+          <div
+          id="informacion-contacto"
+          className="flex gap-4 flex-col items-right w-full"
+        >
+          <h1 className="font-semibold text-2xl">Informacion de Contacto</h1>
           <div
             className="flex items-center hover:bg-gray-300 p-2 rounded-lg transition-colors duration-100 hover:cursor-pointer"
             onClick={() =>
@@ -134,10 +152,35 @@ function Contact() {
             </div>
           </div>
         </div>
-        <div id="mail-to" className="w-100 ">
+        <div
+          id="follow"
+          className="flex gap-4 flex-col items-right w-full pt-6"
+        >
+          <h1 className="font-semibold text-2xl">Sigueme</h1>
+          <div className="flex gap-4">
+            <div className="social-icon-box">
+              <Github className="w-6 h-6" onClick={() => window.open("https://github.com/SethMillan")}/>
+            </div>
+            <div className="social-icon-box">
+              <Linkedin className="w-6 h-6" onClick={()=> window.open("https://www.linkedin.com/in/mill%C3%A1n-d-sutekh17/")}/>
+            </div>
+            <div className="social-icon-box">
+              <Facebook className="w-6 h-6" onClick={()=> window.open("https://www.facebook.com/sutekh.millan/")}/>
+            </div>
+            <div className="social-icon-box">
+              <Instagram className="w-6 h-6" onClick={()=> window.open("https://www.instagram.com/millan_d_seth/")}/>
+            </div>
+            <div className="social-icon-box">
+              <Mail className="w-6 h-6" onClick={()=> window.open("mailto:millanseth@gmail.com")}/>
+            </div>
+          </div>
+        </div>
+        
+        </div>
+        <div id="mail-to" className="w-100 pt-13">
           <div
             id="card"
-            className="bg-white p-4 rounded-lg shadow-md flex flex-col gap-4"
+            className="bg-white p-4 rounded-lg shadow-md flex flex-col gap-4 w-[80%] mx-auto"
           >
             <form
               ref={formRef}

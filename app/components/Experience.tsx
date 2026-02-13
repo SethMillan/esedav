@@ -26,7 +26,7 @@ function Experience() {
   ];
   return (
     <>
-      <section className="flex items-center flex-col bg-white px-8 py-6 rounded-2xl shadow-lg pb-6">
+      <section className="flex items-center flex-col bg-white px-8 py-6 rounded-2xl shadow-lg pb-6 ">
         <h1 className="font-bold text-lg">EXPERIENCIA</h1>
         <div className="h-px w-30 bg-[linear-gradient(90deg,#256EFF_0%,#FFC07A_66.83%)]"></div>
         <div className="flex flex-row gap-6 mt-4">

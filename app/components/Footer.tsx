@@ -1,12 +1,13 @@
 import { Separator } from "@radix-ui/react-separator";
 import React from "react";
+import { scrollToSection } from "./utils/scroll";
 
 function Footer() {
   const referencias = [
-    { nombre: "Sobre Mí", url: "#" },
-    { nombre: "Servicios", url: "#" },
-    { nombre: "Proyectos", url: "#" },
-    { nombre: "Contacto", url: "#" },
+    { nombre: "Sobre Mí", url: "about" },
+    { nombre: "Servicios", url: "services" },
+    { nombre: "Proyectos", url: "projects" },
+    { nombre: "Contacto", url: "contact" },
   ];
 
   return (
@@ -25,12 +26,12 @@ function Footer() {
         </div>
       </div>
       <Separator className="w-[96%] bg-gray-600 h-px border" />
-      <div className="flex  justify-center gap-16 p-8 w-full">
+      <div className="flex  justify-center md:gap-16 gap-6 p-8 w-full">
         {referencias.map((ref, index) => (
           <a
             key={index}
-            href={ref.url}
-            className="text-gray-700 hover:text-black transition-colors duration-300"
+            onClick={() => { scrollToSection(ref.url);}}
+            className="text-gray-700 hover:text-black transition-colors duration-300 hover:cursor-pointer"
           >
             {ref.nombre}
           </a>

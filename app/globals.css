@@ -143,6 +143,16 @@ body {
   }
 }
 
+@layer components {
+  .social-icon-box {
+    @apply border border-black/20 size-10 flex items-center justify-center rounded-lg transition-all duration-200;
+  }
+  
+  .social-icon-box:hover {
+    @apply shadow-lg border-black -translate-y-1 bg-gray-100/50 cursor-pointer;
+  }
+}
+
 /* Ajusta el scroll para compensar el navbar fijo */
 section {
   scroll-margin-top: 80px; /* Ajusta según altura de tu navbar */
