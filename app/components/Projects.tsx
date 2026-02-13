@@ -31,10 +31,10 @@ function Projects() {
           Estos son algunos de los proyectos en los que he trabajado
           recientemente.
         </h2>
-        <div className="flex w-[90%] items-center gap-8 mt-4 flex-col md:flex-row justify-center flex-wrap">
+        <div className="flex  items-center gap-8 mt-4 flex-col md:flex-row justify-center flex-wrap">
             {
                 proyectos.map((proyecto, index)=>(
-                    <div key={index} className="mb-8 w-100 bg-[#D9D9D9] dark:bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col  gap-4 hover:scale-101 transition-transform">
+                    <div key={index} className="mb-8 w-95 bg-[#D9D9D9] dark:bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col  gap-4 hover:scale-101 transition-transform">
                         <img src={proyecto.imagen} alt={proyecto.nombre} className="rounded-lg"/>
                         <h3 className="text-2xl font-semibold">{proyecto.nombre}</h3>
                         <p className="text-md font-normal -my-2">{proyecto.descripcion}</p>

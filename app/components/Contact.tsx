@@ -177,7 +177,7 @@ function Contact() {
         </div>
         
         </div>
-        <div id="mail-to" className="w-100 pt-13">
+        <div id="mail-to" className="w-100 lg:w-130 pt-13 md:-mt-10">
           <div
             id="card"
             className="bg-white p-4 rounded-lg shadow-md flex flex-col gap-4 w-[80%] mx-auto"

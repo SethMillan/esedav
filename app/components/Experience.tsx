@@ -32,7 +32,7 @@ function Experience() {
         <div className="flex flex-row gap-6 mt-4">
           <div className="w-1 h-130 bg-[#256EFF]">
           </div>
-          <div className="w-80 flex flex-col gap-6 mt-1 mb-2">
+          <div className="w-70 md:w-80 flex flex-col gap-6 mt-1 mb-2">
             {experiences.map((exp, index) => (
               <div key={index}>
                 <div className="border-[#256EFF] border-2 h-5 w-5 rounded-full absolute -ml-9  flex items-center justify-center">

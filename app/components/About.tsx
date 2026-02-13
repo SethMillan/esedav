@@ -7,7 +7,7 @@ import { toast } from "sonner";
 function About() {
   return (
     <>
-      <section id="about" className="px-25 flex items-center justify-center w-full flex-col xl:gap-30 gap-15 lg:flex-row pb-30">
+      <section id="about" className="px-18 flex items-center justify-center w-full flex-col xl:gap-30 gap-15 lg:flex-row pb-30">
         <div className="flex flex-col w-full md:w-[60%] lg:w-[50%] xl:w-[40%]  ">
           <div className="flex items-center ">
             <img src="/nave.png" alt="" className="h-11 -ml-2 -mr-2 " />

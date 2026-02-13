@@ -17,10 +17,10 @@ function Footer() {
           <p className="font-normal">© 2026 Seth Millan. Hecho con ❤️ en México, Morelia.</p>
         </div>
         <div className="flex gap-4">
-          <a href="https://www.github.com/" target="_blank">
+          <a href="https://github.com/SethMillan" target="_blank">
             <img src="/github.svg" alt="GitHub" className="w-6 h-6" />
           </a>
-          <a href="https://www.linkedin.com/" target="_blank">
+          <a href="https://www.linkedin.com/in/mill%C3%A1n-d-sutekh17/" target="_blank">
             <img src="/linkedin.svg" alt="LinkedIn" className="w-6 h-6" />
           </a>
         </div>

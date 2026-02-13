@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { MoveUpRight } from "lucide-react";
 import React from "react";
 import { Open_Sans } from "next/font/google";
+import { scrollToSection } from "./utils/scroll";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -40,7 +41,7 @@ function Services() {
 
   return (
     <section id="services" className="pb-8">
-      <h1 className="text-4xl font-bold text-center mb-8">Servicios</h1>
+      <h1 className="md:text-4xl font-bold text-3xl text-center mb-8">Servicios</h1>
       <div className="flex justify-evenly w-full flex-col md:flex-row items-center flex-wrap gap-8">
         {services.map((service, index) => (
           <div
@@ -65,14 +66,14 @@ function Services() {
                 </div>
               )}
             </h2>
-            <p className={`${openSans.className} text-xl font-light`}>
+            <p className={`${openSans.className} text-lg font-light`}>
               {service.description}
             </p>
             <ul className="list-disc list-inside mt-2">
               {service.checks.map((check, i) => (
                 <div
                   key={i}
-                  className={`${openSans.className} text-xl font-normal flex flex-row gap-4`}
+                  className={`${openSans.className} md:text-xl text-lg font-normal flex flex-row gap-4`}
                 >
                   <span
                     style={{ color: `#${service.color}` }}
@@ -89,7 +90,7 @@ function Services() {
                 variant={service.color === "FF8C42" ? "orange" : "secondary"}
                 size={"lg"}
               >
-                <span className="text-xl">CONTRATAME</span>
+                <span className="text-lg md:text-xl" onClick={() => scrollToSection("contact")}>CONTRATAME</span>
 
                 <MoveUpRight />
               </Button>
