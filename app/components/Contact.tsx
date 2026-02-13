@@ -4,19 +4,68 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, MapPin, Phone } from "lucide-react";
 import React from "react";
+import emailjs from "@emailjs/browser";
+import { toast } from "sonner";
+
+emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!); // en variable para no hardcodear la clave jaja
+
+/*
+
+  Notas del autor:
+  Nombres estándar de EmailJS
+  name="from_name"   // o "user_name"
+  name="reply_to"    // o "user_email"
+  name="subject"     // asunto (opcional)
+  name="message"     // mensaje
+
+    En el template de EmailJS hice esto, se ve interesante
+    si hiciera otro template, habria que cambiar los nombres
+    de acuerdo al HTML del formulario, pero por ahora esto funciona bien
+
+*/
 
 function Contact() {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const  nombre = formData.get("nombre") as string;
-    const email = formData.get("email") as string;
-    const asunto = formData.get("asunto") as string;
-    const mensaje = formData.get("mensaje") as string;
+  const formRef = React.useRef<HTMLFormElement>(null);
+  const [isLoading, setIsLoading] = React.useState(false);
+  const [status, setStatus] = React.useState<
+    "loading" | "success" | "error" | null
+  >(null);
 
-    window.location.href = `mailto:millanseth@gmail.com?subject=${encodeURIComponent(asunto)}&body=Nombre: ${encodeURIComponent(nombre)}%0AEmail: ${encodeURIComponent(email)}%0AMensaje: ${encodeURIComponent(mensaje)}`;
-    
-  }
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!formRef.current) return; // por si acaso
+
+    setIsLoading(true);
+    setStatus("loading");
+
+    const emailPromise = emailjs.sendForm(
+      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+      formRef.current,
+    );
+
+    toast.promise(emailPromise, {
+      loading: "Enviando mensaje...",
+      success: (response) => {
+        console.log(
+          "Correo enviado exitosamente : " + response.status,
+          response.text,
+        );
+        formRef.current?.reset(); // resetear el formulario después de enviar
+        setStatus("success");
+        setIsLoading(false);
+        return "Mensaje enviado exitosamente. ¡Gracias por contactarme!";
+      },
+      error: (response) => {
+        console.error("Error al enviar el correo:", response);
+        setStatus("error");
+        setIsLoading(false);
+        return "Error al enviar el mensaje. Por favor, inténtalo de nuevo.";
+      },
+    });
+  };
+
   return (
     <section className="bg-gray-200 flex items-center justify-center flex-col py-10 gap-4">
       <h1 className="font-bold text-4xl">Contacto</h1>
@@ -90,30 +139,50 @@ function Contact() {
             id="card"
             className="bg-white p-4 rounded-lg shadow-md flex flex-col gap-4"
           >
-            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-              <Label htmlFor="nombre">Nombre</Label>
-              <Input id="nombre" name="nombre" type="text" placeholder="Tu nombre" />
-
-              <Label htmlFor="email">Email</Label>
-              <Input id="email" name="email" type="email" placeholder="tu@email.com" />
-
-              <Label htmlFor="asunto">Asunto</Label>
+            <form
+              ref={formRef}
+              onSubmit={handleSubmit}
+              className="flex flex-col gap-4"
+            >
+              <Label htmlFor="from_name">Nombre</Label>
               <Input
-                id="asunto"
-                name="asunto"
+                id="from_name"
+                name="from_name"
                 type="text"
-                placeholder="¿En qué puedo ayudarte?"
+                placeholder="Tu nombre"
+                disabled={isLoading}
               />
 
-              <Label htmlFor="mensaje">Mensaje</Label>
+              <Label htmlFor="reply_to">Email</Label>
+              <Input
+                id="reply_to"
+                name="reply_to"
+                type="email"
+                placeholder="tu@email.com"
+                disabled={isLoading}
+              />
+
+              <Label htmlFor="title">Asunto</Label>
+              <Input
+                id="title"
+                name="title"
+                type="text"
+                placeholder="¿En qué puedo ayudarte?"
+                disabled={isLoading}
+              />
+
+              <Label htmlFor="message">Mensaje</Label>
               <Textarea
-                id="mensaje"
-                name="mensaje"
+                id="message"
+                name="message"
                 placeholder="Cuentame sobre tu proyecto..."
                 required
                 rows={4}
+                disabled={isLoading}
               />
-              <Button type="submit">Enviar Mensaje</Button>
+              <Button type="submit">
+                {isLoading ? "Enviando..." : "Enviar Mensaje"}
+              </Button>
             </form>
           </div>
         </div>

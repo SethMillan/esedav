@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Roboto_Condensed } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,6 +42,19 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${robotoCondensed.variable} ${robotoCondensed.className} antialiased`}
       >
         {children}
+        <Toaster
+          position="top-center"
+          richColors
+          toastOptions={{
+            classNames: {
+              toast:
+                "group toast group-[.toaster]:bg-white group-[.toaster]:border group-[.toaster]:border-gray-200 group-[.toaster]:shadow-lg group-[.toaster]:rounded-lg group-[.toaster]:border-l-4 group-[.toaster]:border-l-blue-500",
+              description: "group-[.toast]:text-gray-600",
+              success: "group-[.toaster]:border-l-green-500", // Verde para éxito
+              error: "group-[.toaster]:border-l-red-500", // Rojo para error
+            },
+          }}
+        />
       </body>
     </html>
   );

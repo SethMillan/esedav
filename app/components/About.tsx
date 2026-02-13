@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
 import React from "react";
 import Experience from "./Experience";
+import { toast } from "sonner";
 
 function About() {
   return (
@@ -35,10 +36,11 @@ function About() {
               <p className="font-medium sm:text-lg text-base">Clientes satisfechos</p>
             </div>
           </div>
-          <div className="flex items-center justify-center lg:justify-start">
+          <div className="flex items-center justify-center lg:justify-start" onClick={() => toast.success("¡CV descargado exitosamente!")}>
             <Button size={"lg"} className="text-xl mt-6" variant={"secondary"}>
               <span className="font-semibold">Descargar CV</span>{" "}
               <Download className="ml-2 h-8 w-8" />
+              
             </Button>
           </div>
         </div>
