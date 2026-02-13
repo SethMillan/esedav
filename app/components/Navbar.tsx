@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { scrollToSection } from "@/app/components/utils/scroll"; // ← Importar aquí
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -15,11 +16,6 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: "smooth" });
-    setIsMobileMenuOpen(false);
-  };
 
   const navLinks = [
     { name: "Sobre Mí", id: "about" },
@@ -38,7 +34,6 @@ export function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="text-2xl font-bold  dark:text-neutral-100 hover:opacity-80 transition-opacity"
@@ -46,12 +41,14 @@ export function Navbar() {
             SM<span className="opacity-70">.</span>
           </button>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <button
                 key={link.id}
-                onClick={() => scrollToSection(link.id)}
+                onClick={() => {
+                  scrollToSection(link.id);
+                  setIsMobileMenuOpen(false);
+                }}
                 className="opacity-70 dark:text-neutral-400 hover:opacity-100 dark:hover:text-neutral-100 transition-opacity font-medium hover:cursor-pointer"
               >
                 {link.name}
@@ -59,7 +56,6 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
           <Button
             variant="ghost"
             size="icon"
@@ -74,7 +70,6 @@ export function Navbar() {
           </Button>
         </div>
 
-        {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden pt-4 pb-6 space-y-4 animate-in fade-in slide-in-from-top-5">
             {navLinks.map((link) => (

@@ -39,7 +39,7 @@ function Services() {
   ];
 
   return (
-    <section className="pb-8">
+    <section id="services" className="pb-8">
       <h1 className="text-4xl font-bold text-center mb-8">Servicios</h1>
       <div className="flex justify-evenly w-full flex-col md:flex-row items-center flex-wrap gap-8">
         {services.map((service, index) => (

@@ -67,7 +67,7 @@ function Contact() {
   };
 
   return (
-    <section className="bg-gray-200 flex items-center justify-center flex-col py-10 gap-4">
+    <section id="contact" className="bg-gray-200 flex items-center justify-center flex-col py-10 gap-4">
       <h1 className="font-bold text-4xl">Contacto</h1>
       <p className="font-normal text-lg">
         ¿Tienes un proyecto en mente? Hablemos sobre como podemos ayudarte.

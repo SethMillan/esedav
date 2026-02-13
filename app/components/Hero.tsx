@@ -3,6 +3,7 @@ import NavSocial from "./NavSocial";
 import { Button } from "@/components/ui/button";
 import { MoveRight } from "lucide-react";
 import Mouse from "./Mouse";
+import { scrollToSection } from "./utils/scroll";
 
 function Hero() {
   return (
@@ -24,10 +25,10 @@ function Hero() {
             limpio.
           </p>
           <div className="pt-6 flex sm:gap-20 flex-col sm:flex-row items-center justify-center gap-8">
-            <Button size={"lg"} className="text-xl ">
+            <Button size={"lg"} className="text-xl " onClick={() => scrollToSection("projects")}>
               Ver Proyectos <MoveRight className="ml-2 h-4 w-4" />
             </Button>
-            <Button className="text-xl" size={"lg"} variant={"outline"}>
+            <Button className="text-xl" size={"lg"} variant={"outline"} onClick={()=> scrollToSection("contact")}>
               Contactar :D
             </Button>
           </div>

@@ -142,3 +142,13 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Ajusta el scroll para compensar el navbar fijo */
+section {
+  scroll-margin-top: 80px; /* Ajusta según altura de tu navbar */
+}
+
+/* O si usas IDs específicos */
+#about, #projects, #services, #contact {
+  scroll-margin-top: 80px;
+}

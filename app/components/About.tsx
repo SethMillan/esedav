@@ -7,7 +7,7 @@ import { toast } from "sonner";
 function About() {
   return (
     <>
-      <section className="px-25 flex items-center justify-center w-full flex-col xl:gap-30 gap-15 lg:flex-row pb-30">
+      <section id="about" className="px-25 flex items-center justify-center w-full flex-col xl:gap-30 gap-15 lg:flex-row pb-30">
         <div className="flex flex-col w-full md:w-[60%] lg:w-[50%] xl:w-[40%]  ">
           <div className="flex items-center ">
             <img src="/nave.png" alt="" className="h-11 -ml-2 -mr-2 " />
@@ -36,8 +36,8 @@ function About() {
               <p className="font-medium sm:text-lg text-base">Clientes satisfechos</p>
             </div>
           </div>
-          <div className="flex items-center justify-center lg:justify-start" onClick={() => toast.success("¡CV descargado exitosamente!")}>
-            <Button size={"lg"} className="text-xl mt-6" variant={"secondary"}>
+          <div className="flex items-center justify-center lg:justify-start" >
+            <Button size={"lg"} className="text-xl mt-6" variant={"secondary"} onClick={() => { window.open('/pdfs/Curriculum_Seth_Millan.pdf', '_blank'); toast.success('Descargando CV...'); }}>
               <span className="font-semibold">Descargar CV</span>{" "}
               <Download className="ml-2 h-8 w-8" />
               

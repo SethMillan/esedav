@@ -25,7 +25,7 @@ function Projects() {
 
   return (
     <>
-      <section className=" w-full flex flex-col items-center gap-4 justify-center pb-30 pt-10">
+      <section id="projects" className=" w-full flex flex-col items-center gap-4 justify-center pb-30 ">
         <h1 className="md:text-4xl font-bold text-3xl">Proyectos Destacados</h1>
         <h2 className="md:text-xl font-normal w-[60%] text-center text-md">
           Estos son algunos de los proyectos en los que he trabajado
